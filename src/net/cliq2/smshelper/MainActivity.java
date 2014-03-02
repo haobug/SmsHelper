@@ -34,6 +34,8 @@ implements OnReceivedListener {
 
 		setContentView(R.layout.main);
 		
+		Config.setOperator(Config.CHINA_UNICOM);
+		
 		txt_status = (TextView) findViewById(R.id.txt_status);
 
 		btn_send = (Button) findViewById(R.id.btn_send);
@@ -42,7 +44,7 @@ implements OnReceivedListener {
 				Logger.d("listener::onClick");
 				mReceiver = new SmsReceiver(MainActivity.this, MainActivity.this);
 				Util.listenToSms(MainActivity.this, mReceiver);
-				Util.sendSms("10086", mReceiver);
+				Util.sendSms(Config.getServiceNumber(), mReceiver);
 			}
 		});
 

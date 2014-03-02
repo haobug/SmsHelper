@@ -59,10 +59,10 @@ implements OnReceivedListener {
 	}
 
 	private void bindOptions(String recvContent) {
-		int menu_pos = recvContent.indexOf(Config.MENU_TEXT);
+		int menu_pos = recvContent.indexOf(Config.getMenuText());
 		if (menu_pos != -1) {
 			recvContent = recvContent.substring(menu_pos
-					+ Config.MENU_TEXT.length());
+					+ Config.getMenuText().length());
 			List<Option> opts = parseSms(recvContent);
 			if (opts != null && opts.size() > 0) {
 				if (opts.size() > 1) {
@@ -85,7 +85,7 @@ implements OnReceivedListener {
 	}
 
 	private List<Option> parseSms(String recvContent) {
-		Pattern pattern = Pattern.compile("([0-9]*).([^\n]*)\n");
+		Pattern pattern = Pattern.compile(Config.getItemRegex());
 		Matcher matcher = pattern.matcher(recvContent);
 		List<Option> opts = new ArrayList<Option>();
 		int last_pos = 0;
@@ -99,7 +99,7 @@ implements OnReceivedListener {
 		if (last_pos < recvContent.length() - 1) {
 			String last_line = recvContent.substring(last_pos);
 			Logger.d("last part is" + last_line);
-			opts.add(new Option(last_line, "10086"));
+			opts.add(new Option(last_line, Config.getServiceNumber()));
 		}
 		return opts;
 	}

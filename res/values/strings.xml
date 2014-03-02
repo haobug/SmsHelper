@@ -4,7 +4,7 @@
     <string name="hello">Hello World, MainActivity!</string>
     <string name="app_name">smshelper</string>
     <string name="status_def">raw reply will goes here</string>
-    <string name="send">Send 10086</string>
+    <string name="send">Send %s</string>
     <string name="goback">&lt;-Back</string>
 
 </resources>

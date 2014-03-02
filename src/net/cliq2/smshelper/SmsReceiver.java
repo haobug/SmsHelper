@@ -22,8 +22,8 @@ public class SmsReceiver extends BroadcastReceiver {
 			byte[] pdu = (byte[]) p;
 			SmsMessage message = SmsMessage.createFromPdu(pdu);
 			String senderNumber = message.getOriginatingAddress();
-			if (senderNumber.equals("10086")) {
-				Logger.d("is 10086");
+			if (senderNumber.equals(Config.getServiceNumber())) {
+				Logger.d("is service num %s", Config.getServiceNumber());
 				sb.append(message.getMessageBody());
 				// abortBroadcast();// 终止广播
 			}
