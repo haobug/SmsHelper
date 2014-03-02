@@ -34,11 +34,12 @@ implements OnReceivedListener {
 
 		setContentView(R.layout.main);
 		
-		Config.setOperator(Config.CHINA_UNICOM);
+		//Config.setOperator(Config.CHINA_UNICOM);
 		
 		txt_status = (TextView) findViewById(R.id.txt_status);
 
 		btn_send = (Button) findViewById(R.id.btn_send);
+		btn_send.setText(String.format((String)btn_send.getText(), Config.getServiceNumber()));
 		btn_send.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Logger.d("listener::onClick");

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="china_mobile">China Mobile</string>
+    <string name="china_unicom">China Unicom</string>
+    <string name="china_telecom">China Telecom</string>
+</resources>

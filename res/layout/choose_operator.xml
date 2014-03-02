@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RadioButton
+        android:id="@+id/rdo_cmcc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onRadioButtonClicked"
+        android:text="@string/china_mobile" />
+
+    <RadioButton
+        android:id="@+id/rdo_cucc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onRadioButtonClicked"
+        android:text="@string/china_unicom" />
+
+        <RadioButton
+        android:id="@+id/rdo_ctcc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onRadioButtonClicked"
+        android:text="@string/china_telecom"
+        android:enabled="false"/>
+
+        <RadioButton
+        android:id="@+id/rdo_guess"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onRadioButtonClicked"
+        android:text="@string/guess"
+        android:enabled="false"/>
+        
+</RadioGroup>
